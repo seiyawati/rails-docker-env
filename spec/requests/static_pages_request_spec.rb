@@ -14,7 +14,8 @@ RSpec.describe "Staticpages", type: :request do
             get root_url
             expect(response).to have_http_status(:success)
             # response.bodyはHTTPレスポンスで出力されたHTML
-            expect(response.body).to include "Home | #{@base_title}"
+            expect(response.body).to include @base_title
+            expect(response.body).to_not include "|#{@base_title}"  
         end
     end
 
@@ -22,7 +23,8 @@ RSpec.describe "Staticpages", type: :request do
         it "returns http success" do
             get static_pages_home_url
             expect(response).to have_http_status(:success)
-            expect(response.body).to include "Home | #{@base_title}"
+            expect(response.body).to include @base_title
+            expect(response.body).to_not include "|#{@base_title}"  
         end
     end
 
@@ -30,7 +32,7 @@ RSpec.describe "Staticpages", type: :request do
         it "returns http success" do
             get static_pages_help_url
             expect(response).to have_http_status(:success)  
-            expect(response.body).to include "Help | #{@base_title}"
+            expect(response.body).to include "Help|#{@base_title}"
         end
     end
 
@@ -38,7 +40,7 @@ RSpec.describe "Staticpages", type: :request do
         it "returns http success" do
             get static_pages_about_url
             expect(response).to have_http_status(:success)
-            expect(response.body).to include "About | #{@base_title}"
+            expect(response.body).to include "About|#{@base_title}"
         end
     end
 
@@ -46,7 +48,7 @@ RSpec.describe "Staticpages", type: :request do
         it "returns http success" do
             get static_pages_contact_url
             expect(response).to have_http_status(:success)
-            expect(response.body).to include "Contact | #{@base_title}"  
+            expect(response.body).to include "Contact|#{@base_title}"  
         end
     end
     
