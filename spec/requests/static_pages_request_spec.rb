@@ -19,18 +19,9 @@ RSpec.describe "Staticpages", type: :request do
         end
     end
 
-    describe "GET /home" do
-        it "returns http success" do
-            get static_pages_home_url
-            expect(response).to have_http_status(:success)
-            expect(response.body).to include @base_title
-            expect(response.body).to_not include "|#{@base_title}"  
-        end
-    end
-
     describe "GET /help" do
         it "returns http success" do
-            get static_pages_help_url
+            get help_path
             expect(response).to have_http_status(:success)  
             expect(response.body).to include "Help|#{@base_title}"
         end
@@ -38,7 +29,7 @@ RSpec.describe "Staticpages", type: :request do
 
     describe "GET /about" do
         it "returns http success" do
-            get static_pages_about_url
+            get about_path
             expect(response).to have_http_status(:success)
             expect(response.body).to include "About|#{@base_title}"
         end
@@ -46,7 +37,7 @@ RSpec.describe "Staticpages", type: :request do
 
     describe "GET /contact" do
         it "returns http success" do
-            get static_pages_contact_url
+            get contact_path
             expect(response).to have_http_status(:success)
             expect(response.body).to include "Contact|#{@base_title}"  
         end
