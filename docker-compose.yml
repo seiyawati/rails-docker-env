@@ -21,6 +21,8 @@ services:
     links: 
       - db
       - chrome
+    tty: true
+    stdin_open: true
   
   chrome:
     image: selenium/standalone-chrome:latest
