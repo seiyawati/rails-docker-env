@@ -48,6 +48,7 @@ GEM
     arel (9.0.0)
     autoprefixer-rails (10.2.0.0)
       execjs
+    bcrypt (3.1.12)
     bindex (0.8.1)
     bootsnap (1.5.1)
       msgpack (~> 1.0)
@@ -78,6 +79,11 @@ GEM
     diff-lcs (1.4.4)
     erubi (1.10.0)
     execjs (2.7.0)
+    factory_bot (6.1.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.1.0)
+      factory_bot (~> 6.1.0)
+      railties (>= 5.0.0)
     ffi (1.14.2)
     formatador (0.2.5)
     globalid (0.4.2)
@@ -249,11 +255,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (= 3.1.12)
   bootsnap (>= 1.1.0)
   bootstrap-sass (= 3.3.7)
   byebug (= 9.0.6)
   capybara
   coffee-rails (~> 4.2)
+  factory_bot_rails
   guard (= 2.16.2)
   guard-minitest (= 2.4.4)
   jbuilder (~> 2.5)
