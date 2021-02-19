@@ -69,14 +69,4 @@ RSpec.describe User, type: :model do
     user.password = user.password_confirmation = 'a'*5
     expect(user).to be_invalid  
   end
-  
-  
-  
-  
-  
-
-
-  
-  
-  
 end

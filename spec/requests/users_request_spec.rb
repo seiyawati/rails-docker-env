@@ -12,8 +12,5 @@ RSpec.describe "Users", type: :request do
                 expect(response).to redirect_to user_path(User.last) 
             end
         end
-        
     end
-    
-    
 end
